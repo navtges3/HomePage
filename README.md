@@ -1,3 +1,3 @@
 GUI-Programming
 
-This Repo will hold my work for GUI-programming.
+Everything is in the gh-pages branch.
