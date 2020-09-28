@@ -1,0 +1,51 @@
+/*
+91.61 Assignment Styling Your First Web Page With CSS
+Nicholas E. Avtges Umass Lowell Computer Science, nicholas_avtges@student.uml.edu
+Created 9/8/2020
+
+This file will be used to format the index page created in part one of homework two.
+*/
+
+* {
+    font-family: serif;
+}
+
+body {
+    background-image: url("angryimg.png");
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+
+h1 {
+    color: navy;
+    text-align: center;
+    font-family: cursive;
+}
+
+.email {
+    text-align: center;
+}
+
+h2 {
+    color: navy;
+    text-align: center;
+    font-family: cursive;
+}
+
+.columnA {
+  border-style: solid;
+  border-width: thick;
+  border-radius: 15px;
+  float: left;
+  width: 45%;
+  padding: 20px;
+}
+
+.columnB {
+  border-style: solid;
+  border-width: thick;
+  border-radius: 15px;
+  float: left;
+  width: 22%;
+  padding: 10px;
+}
