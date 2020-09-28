@@ -1,10 +1,9 @@
 /*
-91.61 Assignment Bootstrap and GitHub
+91.61 Assignment Styling Your First Web Page With CSS
 Nicholas E. Avtges Umass Lowell Computer Science, nicholas_avtges@student.uml.edu
-Created 9/28/2020
+Created 9/8/2020
 
-This file will be used to format the main html file for HW4. The customization here
-will be used to pollish the improvements made using bootstrap.
+This file will be used to format the index page created in part one of homework two.
 */
 
 * {
