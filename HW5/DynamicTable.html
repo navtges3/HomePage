@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="css/mystyle.css">
     </head>
     <body>
-        <form>
+        <form name="myForm">
            <label for="n1">Number 1:</label>
            <input type="text" id="n1" name="n1"><br>
            <label for="n2">Number 2:</label>
@@ -22,8 +22,15 @@
            <input type="text" id="n3" name="n3"><br>
            <label for="n4">Number 4:</label>
            <input type="text" id="n4" name="n4"><br>
-           <label for="n5">Number 5:</label>
-           <input type="text" id="n5" name="n5"><br>
+           <input type="submit" value="Submit">
         </form>
+
+        <script>
+            function myFunction() {
+              var n1, n2, n3, n4, text;
+              n1 = document.getElementByID("n1").value;
+
+            }
+        </script>
     </body>
 </html>

@@ -1,0 +1,18 @@
+input[type=text] {
+   border: 2px solid navy;
+   border-radius: 5px;
+   margin: 5px;
+   background-color: #add8e6;
+}
+
+input[type=submit] {
+    background-color: navy;
+    color: white;
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+body {
+    text-align: center;
+}
