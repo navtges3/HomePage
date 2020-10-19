@@ -1,10 +1,10 @@
+/*Formats the input fields of the form*/
 input[type=number] {
    border: 2px solid navy;
    border-radius: 5px;
    margin: 5px;
    background-color: #add8e6;
 }
-
 input[type=button] {
     background-color: navy;
     color: white;
@@ -17,26 +17,25 @@ body {
     text-align: center;
 }
 
+/*Format the table*/
 table {
   border: 1px solid black;
   border-radius: 5px;
   background-color: black;
 }
-
 th, td {
   width: 50px;
   height: 50px;
   border: 1px solid black;
   border-radius: 5px;
 }
-
+/*Set background colors for the cells*/
 tr:nth-child(1) td:nth-child(n+2){
   background-color: #007015;
 }
 tr:nth-child(n+2) td:nth-child(1){
   background-color: #007015;
 }
-
 tr:nth-child(n+2) td:nth-child(n+2){
   background-color: #65eb7e;
 }

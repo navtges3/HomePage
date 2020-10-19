@@ -2,7 +2,11 @@
   91.61 Assignment: Creating an Interactive Dynamic Table
   Nicholas E. Avtges, Umass Lowell Computer Science, nicholas_avtges@student.uml.edu
   Created 10/15/2020
-
+  In this assignment I create a simple form in html that is then formated to look
+  nice in css. The information from the form is then taken by a javascript function.
+  This function takes the information from the table and creates a multiplication
+  table. The table is then displayed onto the webpage where it is formatted from
+  css to make it look more appealing.
 -->
 
 <!DOCTYPE html>
@@ -14,6 +18,7 @@
     </head>
     <body>
         <h2>Enter Numbers Bellow</h2>
+        <!-- Creates a form that will get the numbers to calculate the multiplication table. -->
         <form name="myForm" action="" method="get">
            <label for="n1">Number 1:</label>
            <input type="number" id="n1" name="n1"><br>
@@ -30,7 +35,7 @@
             function myFunction() {
               //Get the values from the form
               var numbers = new Array(5);
-              numbers[0] = " ";
+              numbers[0] = 1;
               numbers[1] = document.forms["myForm"]["n1"].value;
               numbers[2] = document.forms["myForm"]["n2"].value;
               numbers[3] = document.forms["myForm"]["n3"].value;
@@ -38,48 +43,26 @@
 
               //Generate the table
               var table = document.createElement('table');
-
+              //Outer loop to generate rows
               for (var i = 0; i < 5; i++){
-                var val0, val1, val2, val3, val4, val5;
-
-                val0 = numbers[i];
-                if(i == 0){ numbers[0] = 1}
-                val1 = numbers[i] * 1;
-                val2 = numbers[i] * 2;
-                val3 = numbers[i] * 3;
-                val4 = numbers[i] * 4;
-                val5 = numbers[i] * 5;
-
                 var tr = document.createElement('tr');
-
-                var td0 = document.createElement('td');
-                var td1 = document.createElement('td');
-                var td2 = document.createElement('td');
-                var td3 = document.createElement('td');
-                var td4 = document.createElement('td');
-                var td5 = document.createElement('td');
-
-
-                var text0 = document.createTextNode(val0);
-                var text1 = document.createTextNode(val1);
-                var text2 = document.createTextNode(val2);
-                var text3 = document.createTextNode(val3);
-                var text4 = document.createTextNode(val4);
-                var text5 = document.createTextNode(val5);
-
-                td0.appendChild(text0);
-                td1.appendChild(text1);
-                td2.appendChild(text2);
-                td3.appendChild(text3);
-                td4.appendChild(text4);
-                td5.appendChild(text5);
-                tr.appendChild(td0);
-                tr.appendChild(td1);
-                tr.appendChild(td2);
-                tr.appendChild(td3);
-                tr.appendChild(td4);
-                tr.appendChild(td5);
-
+                //Inner loop to generate columns
+                for (var j = 0; j < 6; j++){
+                  var val;
+                  //Make sure that the values stored in numbers are printed properly
+                  if(j == 0){
+                    val = numbers[i];
+                  }
+                  //Calculate the rest of the table values
+                  else{
+                    val = numbers[i] * j;
+                  }
+                  //Create the cells and add them to the table
+                  var td = document.createElement('td');
+                  var text = document.createTextNode(val);
+                  td.appendChild(text);
+                  tr.appendChild(td);
+                }
                 table.appendChild(tr);
               }
               document.body.appendChild(table);
