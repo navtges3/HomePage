@@ -1,0 +1,36 @@
+<!--
+  91.61 Assignment: Using the jQuery Validation Plugin with Your Dynamic Table
+  Nicholas E. Avtges, Umass Lowell Computer Science, nicholas_avtges@student.uml.edu
+  Created 11/2/2020
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dynamic Table</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/mystyle.css">
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/myScript.js"></script>
+        <script src="C:\Users\Nick\node_modules\jquery-validation\dist\jquery.validate.js"></script>
+    </head>
+    <body>
+        <h2>Enter Numbers Bellow</h2>
+        <!-- Creates a form that will get the numbers to calculate the multiplication table. -->
+        <form name="myForm" id="myForm" action="" method="get" onsubmit="myFunction()">
+           <label for="n1">Number 1:</label>
+           <input type="number" id="n1" name="n1" required><br>
+           <label for="n2">Number 2:</label>
+           <input type="number" id="n2" name="n2" required><br>
+           <label for="n3">Number 3:</label>
+           <input type="number" id="n3" name="n3" required><br>
+           <label for="n4">Number 4:</label>
+           <input type="number" id="n4" name="n4" required><br>
+           <input type="submit" name="Submit" value="Submit">
+        </form>
+
+        <script>
+          $("#myForm").validate();
+        </script>
+    </body>
+</html>
