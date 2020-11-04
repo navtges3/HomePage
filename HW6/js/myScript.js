@@ -10,6 +10,7 @@ function myFunction() {
 
   //Generate the table
   var table = document.createElement('table');
+  table.id = "myTable";
   //Outer loop to generate rows
   for (var i = 0; i < 5; i++){
     var tr = document.createElement('tr');
