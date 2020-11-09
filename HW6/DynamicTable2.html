@@ -19,18 +19,45 @@
         <!-- Creates a form that will get the numbers to calculate the multiplication table. -->
         <form name="myForm" id="myForm" action="" method="get" onsubmit="myFunction();return false">
            <label for="n1">Number 1:</label>
-           <input type="number" id="n1" name="n1" required><br>
+           <input type="number" id="n1" name="n1"><br>
            <label for="n2">Number 2:</label>
-           <input type="number" id="n2" name="n2" required><br>
+           <input type="number" id="n2" name="n2"><br>
            <label for="n3">Number 3:</label>
-           <input type="number" id="n3" name="n3" required><br>
+           <input type="number" id="n3" name="n3"><br>
            <label for="n4">Number 4:</label>
-           <input type="number" id="n4" name="n4" required><br>
+           <input type="number" id="n4" name="n4"><br>
            <input type="submit" name="Submit" value="Submit">
         </form>
 
         <script>
-          $("#myForm").validate();
+          $.validate.addMethod("upperLimit", function(value, element) {
+            return this.optional(element) || value < 1000;
+          }, "Please select a smaller value");
+
+          $.validate.addMethod("lowerLimit", function(value, element) {
+            return this.optional(element) || value > -1000;
+          }, "Please select a larger value");
+
+          $("#myForm").validate({
+              rules: {
+                n1: {
+                  requred: true,
+                  maxlength: 4
+                },
+                n2: {
+                  requred: true,
+                  maxlength: 4
+                },
+                n3: {
+                  requred: true,
+                  maxlength: 4
+                },
+                n4: {
+                  requred: true,
+                  maxlength: 4
+                }
+              }
+          });
         </script>
     </body>
 </html>

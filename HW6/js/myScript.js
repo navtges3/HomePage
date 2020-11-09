@@ -10,10 +10,14 @@ function myFunction() {
   numbers[3] = document.forms["myForm"]["n3"].value;
   numbers[4] = document.forms["myForm"]["n4"].value;
 
-  if(document.forms["myForm"]["n1"].value.length == 0) {
-    document.body.appendChild(document.createTextNode("It is empty"));
+  for(var x = 1; x < 5; x++){
+    if(numbers[x] == null || numbers[x] == ""){
+      valid = false;
+      break;
+    }
   }
-  if(valid == true){
+
+  if(valid){
     //Generate the table
     var table = document.createElement('table');
     table.id = "myTable";
