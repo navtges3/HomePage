@@ -14,30 +14,23 @@
         <script src="js/myScript.js"></script>
         <script src="C:\Users\Nick\node_modules\jquery-validation\dist\jquery.validate.js"></script>
     </head>
-    <body>
+    <body onload="startup();">
         <h2>Enter Numbers Bellow</h2>
         <!-- Creates a form that will get the numbers to calculate the multiplication table. -->
-        <form name="myForm" id="myForm" action="" method="get" onsubmit="myFunction();return false">
-           <label for="n1">Number 1:</label>
+        <form name="myForm" id="myForm" action method="get" onsubmit="myFunction();return false">
+           <label for="n1">Starting Column Value:</label>
            <input type="number" id="n1" name="n1"><br>
-           <label for="n2">Number 2:</label>
+           <label for="n2">Ending Column Value:</label>
            <input type="number" id="n2" name="n2"><br>
-           <label for="n3">Number 3:</label>
+           <label for="n3">Starting Row Value:</label>
            <input type="number" id="n3" name="n3"><br>
-           <label for="n4">Number 4:</label>
+           <label for="n4">Ending Row Value:</label>
            <input type="number" id="n4" name="n4"><br>
            <input type="submit" name="Submit" value="Submit">
         </form>
 
+        <!-- Validate the form -->
         <script>
-          $.validate.addMethod("upperLimit", function(value, element) {
-            return this.optional(element) || value < 1000;
-          }, "Please select a smaller value");
-
-          $.validate.addMethod("lowerLimit", function(value, element) {
-            return this.optional(element) || value > -1000;
-          }, "Please select a larger value");
-
           $("#myForm").validate({
               rules: {
                 n1: {
