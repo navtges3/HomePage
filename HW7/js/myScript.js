@@ -33,8 +33,36 @@ function startup() {
   document.body.appendChild(table);
 }
 
+//This function will change the value of the slider according to the value of the text box
+function valueChanged(number) {
+  var box, slider;
+  switch (number) {
+    case 1:
+      box = "n1";
+      slider = "#slider1";
+      break;
+    case 2:
+      box = "n2";
+      slider = "#slider2";
+      break;
+    case 3:
+      box = "n3";
+      slider = "#slider3";
+      break;
+    case 4:
+      box = "n4";
+      slider = "#slider4";
+      break;
+    default:
+      box = "n1";
+      slider = "#slider1";
+  }
+  var value = document.forms["myForm"][box].value;
+  $(slider).slider( "value", value );
+}
+
 //This function is used to generate a table given four values
-function myFunction() {
+function updateTable() {
   //Get the values from the form
   var numbers = new Array(4);
   numbers[0] = document.forms["myForm"]["n1"].value;

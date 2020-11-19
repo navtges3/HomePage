@@ -3,6 +3,7 @@ input[type=number] {
    border: 2px solid navy;
    border-radius: 5px;
    margin: 5px;
+   width: 10%
    background-color: #add8e6;
 }
 input[type=submit] {
@@ -38,4 +39,9 @@ tr:nth-child(n+2) td:nth-child(1){
 }
 tr:nth-child(n+2) td:nth-child(n+2){
   background-color: #65eb7e;
+}
+
+/*My Sliders*/
+#slider1, #slider2, #slider3, #slider4{
+  width: 200px;
 }

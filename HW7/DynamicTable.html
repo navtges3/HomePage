@@ -10,7 +10,11 @@
         <title>Dynamic Table</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/mystyle.css">
-        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+        <script src="https://code.jquery.com/ui/jquery-ui-git.js"></script>
         <script src="js/myScript.js"></script>
         <script src="C:\Users\Nick\node_modules\jquery-validation\dist\jquery.validate.js"></script>
     </head>
@@ -19,35 +23,102 @@
         <!-- Creates a form that will get the numbers to calculate the multiplication table. -->
         <form name="myForm" id="myForm" action method="get" onsubmit="myFunction();return false">
            <label for="n1">Starting Column Value:</label>
-           <input type="number" id="n1" name="n1"><br>
+           <div id="slider1"></div>
+           <input type="number" id="n1" name="n1" onchange="valueChanged(1)"><br>
            <label for="n2">Ending Column Value:</label>
-           <input type="number" id="n2" name="n2"><br>
+           <div id="slider2"></div>
+           <input type="number" id="n2" name="n2" onchange="valueChanged(2)"><br>
            <label for="n3">Starting Row Value:</label>
-           <input type="number" id="n3" name="n3"><br>
+           <div id="slider3"></div>
+           <input type="number" id="n3" name="n3" onchange="valueChanged(3)"><br>
            <label for="n4">Ending Row Value:</label>
-           <input type="number" id="n4" name="n4"><br>
+           <div id="slider4"></div>
+           <input type="number" id="n4" name="n4" onchange="valueChanged(4)"><br>
            <input type="submit" name="Submit" value="Submit">
         </form>
 
         <!-- Validate the form -->
         <script>
+          var min = -200;
+          var max = 200;
+          $( function() {
+            $( "#slider1" ).slider({
+              orientation: "horizontal",
+              range: "min",
+              min: min,
+              max: max,
+              value: 1,
+              change: function (event, ui){ updateTable();},
+              slide: function( event, ui ) {
+                $( "#n1" ).val( ui.value );
+              }
+            });
+            $( "#n1" ).val( $( "#slider1" ).slider( "value" ) );
+          } );
+          $( function() {
+            $( "#slider2" ).slider({
+              orientation: "horizontal",
+              range: "min",
+              min: min,
+              max: max,
+              value: 10,
+              change: function (event, ui){ updateTable();},
+              slide: function( event, ui ) {
+                $( "#n2" ).val( ui.value );
+              }
+            });
+            $( "#n2" ).val( $( "#slider2" ).slider( "value" ) );
+          } );
+          $( function() {
+            $( "#slider3" ).slider({
+              orientation: "horizontal",
+              range: "min",
+              min: min,
+              max: max,
+              value: 1,
+              change: function (event, ui){ updateTable();},
+              slide: function( event, ui ) {
+                $( "#n3" ).val( ui.value );
+              }
+            });
+            $( "#n3" ).val( $( "#slider3" ).slider( "value" ) );
+          } );
+          $( function() {
+            $( "#slider4" ).slider({
+              orientation: "horizontal",
+              range: "min",
+              min: min,
+              max: max,
+              value: 10,
+              change: function (event, ui){ updateTable();},
+              slide: function( event, ui ) {
+                $( "#n4" ).val( ui.value );
+              }
+            });
+            $( "#n4" ).val( $( "#slider4" ).slider( "value" ) );
+          } );
+
           $("#myForm").validate({
               rules: {
                 n1: {
                   requred: true,
-                  maxlength: 4
+                  max: max,
+                  min: min
                 },
                 n2: {
                   requred: true,
-                  maxlength: 4
+                  max: max,
+                  min: min
                 },
                 n3: {
                   requred: true,
-                  maxlength: 4
+                  max: max,
+                  min: min
                 },
                 n4: {
                   requred: true,
-                  maxlength: 4
+                  max: max,
+                  min: min
                 }
               }
           });
