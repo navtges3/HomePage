@@ -19,10 +19,11 @@ body {
 }
 
 /*Format the table*/
-#myTable {
+table {
   border: 1px solid black;
   border-radius: 5px;
   background-color: black;
+  color: black;
 }
 th, td {
   width: 50px;

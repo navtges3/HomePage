@@ -30,7 +30,8 @@ function startup() {
     }
     table.appendChild(tr);
   }
-  document.body.appendChild(table);
+  var div = document.getElementById('fragment0');
+  div.appendChild(table);
 }
 
 //This function will change the value of the slider according to the value of the text box
@@ -69,17 +70,6 @@ function updateTable() {
   numbers[1] = document.forms["myForm"]["n2"].value;
   numbers[2] = document.forms["myForm"]["n3"].value;
   numbers[3] = document.forms["myForm"]["n4"].value;
-
-//if nothing is sumbitted
-  for(var x = 0; x < 4; x++){
-    if(numbers[x] == null || numbers[x] == ""){
-      if(x == 0 || x == 2)
-        numbers[x] = 1;
-      else {
-        numbers[x] = 10;
-      }
-    }
-  }
 
   // swaps if start is bigger than end
   if(numbers[0] > numbers[1]){
@@ -125,5 +115,6 @@ function updateTable() {
     }
     table.appendChild(tr);
   }
-  document.body.appendChild(table);
+  var div = document.getElementById('fragment0');
+  div.appendChild(table);
 }

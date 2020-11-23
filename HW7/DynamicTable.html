@@ -21,7 +21,7 @@
     <body onload="startup();">
         <h2>Enter Numbers Bellow</h2>
         <!-- Creates a form that will get the numbers to calculate the multiplication table. -->
-        <form name="myForm" id="myForm" action method="get" onsubmit="myFunction();return false">
+        <form name="myForm" id="myForm" action method="get" onsubmit="newTab();return false">
            <label for="n1">Starting Column Value:</label>
            <div id="slider1"></div>
            <input type="number" id="n1" name="n1" onchange="valueChanged(1)"><br>
@@ -34,13 +34,39 @@
            <label for="n4">Ending Row Value:</label>
            <div id="slider4"></div>
            <input type="number" id="n4" name="n4" onchange="valueChanged(4)"><br>
-           <input type="submit" name="Submit" value="Submit">
+           <input type="submit" name="Save" value="Save">
         </form>
+
+        <div id="tabs">
+          <ul id="tabs ul">
+            <li><a href="#fragment0">Tab 0</a></li>
+          </ul>
+          <div id="fragment0">
+          </div>
+        </div>
 
         <!-- Validate the form -->
         <script>
+          $( function() {
+            $( "#tabs" ).tabs();
+          });
+
+          var nextTab = 1;
+          //Create a new tab
+          function newTab() {
+            $("<li><a href='#fragment" + nextTab + "'>Tab "+nextTab+"</a></li>").appendTo("#tabs ul");
+            $("<div id='fragment" + nextTab + "'></div>").appendTo("#tabs");
+            //add a copy of myTable to fragment-nextTab
+            var $div = $('div[id^="fragment"]:last');
+            var $table = $( '#myTable' ).clone().prop('id', 'myTable'+nextTab);
+            $div.append( $table );
+            nextTab++;
+            $("#tabs").tabs("refresh");
+          }
+
           var min = -200;
           var max = 200;
+          //Sliders bellow
           $( function() {
             $( "#slider1" ).slider({
               orientation: "horizontal",
@@ -98,6 +124,9 @@
             $( "#n4" ).val( $( "#slider4" ).slider( "value" ) );
           } );
 
+
+
+          //validator stuff
           $("#myForm").validate({
               rules: {
                 n1: {
