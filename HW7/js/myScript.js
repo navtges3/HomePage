@@ -1,3 +1,8 @@
+
+//91.61 Assignment: Using the jQuery UI Slider and Tab Widgets
+//Nicholas E. Avtges, Umass Lowell Computer Science, nicholas_avtges@student.uml.edu
+//Created 11/24/2020
+
 //This function will generate the base table
 function startup() {
   var startx = 1;
@@ -117,4 +122,5 @@ function updateTable() {
   }
   var div = document.getElementById('fragment0');
   div.appendChild(table);
+  newTab(numbers[0] + " " + numbers[1] + " " + numbers[2] + " " + numbers[3]);
 }

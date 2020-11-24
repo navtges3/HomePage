@@ -1,7 +1,9 @@
 <!--
-  91.61 Assignment: Using the jQuery Validation Plugin with Your Dynamic Table
+  91.61 Assignment: Using the jQuery UI Slider and Tab Widgets
   Nicholas E. Avtges, Umass Lowell Computer Science, nicholas_avtges@student.uml.edu
-  Created 11/2/2020
+  Created 11/24/2020
+  In This assignment I was able to add two way bound sliders that would dynamically change the table.
+  The new table would be saved in a new tab. Tabs can be deleted by index and all tabs can be cleared.
 -->
 
 <!DOCTYPE html>
@@ -21,7 +23,7 @@
     <body onload="startup();">
         <h2>Enter Numbers Bellow</h2>
         <!-- Creates a form that will get the numbers to calculate the multiplication table. -->
-        <form name="myForm" id="myForm" action method="get" onsubmit="newTab();return false">
+        <form name="myForm" id="myForm">
            <label for="n1">Starting Column Value:</label>
            <input type="number" id="n1" name="n1" onchange="valueChanged(1)"><br>
            <div id="slider1"></div>
@@ -34,12 +36,16 @@
            <label for="n4">Ending Row Value:</label>
            <input type="number" id="n4" name="n4" onchange="valueChanged(4)"><br>
            <div id="slider4"></div>
-           <input type="submit" name="Save" value="Save">
         </form>
+        <!--used to remove a tab-->
+        <label for="index">Enter a tab index that you wish to remove.</label>
+        <input type="number" id="index" value="1">
+        <button type="button" id="remove">Remove</button>
+        <button type="button" id="clear">Clear All Tabs</button>
 
         <div id="tabs">
           <ul id="tabs ul">
-            <li><a href="#fragment0">Tab 0</a></li>
+            <li><a href="#fragment0">Home</a></li>
           </ul>
           <div id="fragment0">
           </div>
@@ -52,8 +58,8 @@
 
           var nextTab = 1;
           //Create a new tab
-          function newTab() {
-            $("<li><a href='#fragment" + nextTab + "'>Tab "+nextTab+"</a></li>").appendTo("#tabs ul");
+          function newTab(name) {
+            $("<li><a href='#fragment" + nextTab + "'>"+name+"</a></li>").appendTo("#tabs ul");
             $("<div id='fragment" + nextTab + "'></div>").appendTo("#tabs");
             //add a copy of myTable to fragment-nextTab
             var $div = $('div[id^="fragment"]:last');
@@ -62,6 +68,22 @@
             nextTab++;
             $("#tabs").tabs("refresh");
           }
+
+          //removing tabs
+          $("#remove").click(function() {
+            var tabIndex = parseInt($("#index").val(), 10);
+            if(tabIndex > 0){
+              var tab = $( "#tabs" ).find(".ui-tabs-nav li:eq(" + tabIndex + ")").remove();
+              $("#tabs").tabs("refresh");
+            }
+          });
+          //remove all tabs
+          $("#clear").click(function() {
+            while($( "#tabs" ).find(".ui-tabs-nav li:eq(1)").length){
+              var tab = $( "#tabs" ).find(".ui-tabs-nav li:eq(1)").remove();
+              $("#tabs").tabs("refresh");
+            }
+          });
 
           var min = -200;
           var max = 200;
