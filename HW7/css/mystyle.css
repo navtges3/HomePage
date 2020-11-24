@@ -12,10 +12,15 @@ input[type=submit] {
     margin: 5px;
     padding: 10px 20px;
     border-radius: 5px;
+    margin-left: 150px;
+}
+
+label {
+  font-size: 20px;
 }
 
 body {
-    text-align: center;
+    background: linear-gradient(to bottom, #00cc66 0%, #ccff66 100%);
 }
 
 /*Format the table*/
@@ -44,5 +49,25 @@ tr:nth-child(n+2) td:nth-child(n+2){
 
 /*My Sliders*/
 #slider1, #slider2, #slider3, #slider4{
-  width: 200px;
+  width: 350px;
+  background: green;
+}
+
+/*My Tabs*/
+#tabs {
+    padding: 5px;
+    background: #009999;
+    border-width: 1px solid black;
+}
+#tabs .ui-tabs-nav {
+    padding-left: 0px;
+    background: transparent;
+    border-width: 0px 0px 1px 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+#tabs .ui-tabs-panel {
+    background: #00ccff;
+    border-width: 0px 1px 1px 1px;
 }

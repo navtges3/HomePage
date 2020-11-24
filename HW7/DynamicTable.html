@@ -23,17 +23,17 @@
         <!-- Creates a form that will get the numbers to calculate the multiplication table. -->
         <form name="myForm" id="myForm" action method="get" onsubmit="newTab();return false">
            <label for="n1">Starting Column Value:</label>
-           <div id="slider1"></div>
            <input type="number" id="n1" name="n1" onchange="valueChanged(1)"><br>
+           <div id="slider1"></div>
            <label for="n2">Ending Column Value:</label>
-           <div id="slider2"></div>
            <input type="number" id="n2" name="n2" onchange="valueChanged(2)"><br>
+           <div id="slider2"></div>
            <label for="n3">Starting Row Value:</label>
-           <div id="slider3"></div>
            <input type="number" id="n3" name="n3" onchange="valueChanged(3)"><br>
+           <div id="slider3"></div>
            <label for="n4">Ending Row Value:</label>
-           <div id="slider4"></div>
            <input type="number" id="n4" name="n4" onchange="valueChanged(4)"><br>
+           <div id="slider4"></div>
            <input type="submit" name="Save" value="Save">
         </form>
 
@@ -45,7 +45,6 @@
           </div>
         </div>
 
-        <!-- Validate the form -->
         <script>
           $( function() {
             $( "#tabs" ).tabs();
@@ -67,6 +66,7 @@
           var min = -200;
           var max = 200;
           //Sliders bellow
+          //Set the color of the sliders
           $( function() {
             $( "#slider1" ).slider({
               orientation: "horizontal",
