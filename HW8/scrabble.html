@@ -15,6 +15,8 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
+      var array = ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"];
+
       $( function() {
         $( "#draggable1" ).draggable();
         $( "#draggable2" ).draggable();
@@ -23,6 +25,19 @@
         $( "#draggable5" ).draggable();
         $( "#draggable6" ).draggable();
         $( "#draggable7" ).draggable();
+        $( "#space1" ).droppable({
+          over: function( event, ui ) {
+            $( this )
+            .find( "img" )
+            .attr( "src", "graphics_data/Scrabble_Tiles/Scrabble_Tile_B.jpg" );
+          },
+          out: function( event, ui ) {
+            $( this )
+            .find( "img" )
+            .attr( "src", "graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" );
+          }
+
+        });
       } );
     </script>
   </head>
@@ -31,29 +46,71 @@
       <div id="space1" class="ui-widget-header">
         <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
       </div>
+      <div id="space2" class="ui-widget-header">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
+      </div>
+      <div id="space3" class="ui-widget-header">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
+      </div>
+      <div id="space4" class="ui-widget-header">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
+      </div>
+      <div id="space5" class="ui-widget-header">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
+      </div>
+      <div id="space6" class="ui-widget-header">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
+      </div>
+      <div id="space7" class="ui-widget-header">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
+      </div>
+      <div id="space8" class="ui-widget-header">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
+      </div>
+      <div id="space9" class="ui-widget-header">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
+      </div>
+      <div id="space10" class="ui-widget-header">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
+      </div>
+      <div id="space11" class="ui-widget-header">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
+      </div>
+      <div id="space12" class="ui-widget-header">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
+      </div>
+      <div id="space13" class="ui-widget-header">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
+      </div>
+      <div id="space14" class="ui-widget-header">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
+      </div>
+      <div id="space15" class="ui-widget-header">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
+      </div>
     </div>
 
     <div class="hand">
       <div id="draggable1" class="ui-widget-content">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_D.jpg" alt="A">
       </div>
       <div id="draggable2" class="ui-widget-content">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_B.jpg" alt="B">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_O.jpg" alt="B">
       </div>
       <div id="draggable3" class="ui-widget-content">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_C.jpg" alt="C">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_O.jpg" alt="C">
       </div>
       <div id="draggable4" class="ui-widget-content">
         <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_D.jpg" alt="D">
       </div>
       <div id="draggable5" class="ui-widget-content">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_E.jpg" alt="E">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_I.jpg" alt="E">
       </div>
       <div id="draggable6" class="ui-widget-content">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_F.jpg" alt="F">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_E.jpg" alt="F">
       </div>
       <div id="draggable7" class="ui-widget-content">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_G.jpg" alt="F">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_Blank.jpg" alt="F">
       </div>
     </div>
 
