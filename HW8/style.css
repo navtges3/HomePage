@@ -1,0 +1,35 @@
+img {
+  width: inherit;
+  height: inherit;
+}
+#board_image {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.hand {
+  background-image: url("graphics_data/scrabble-tile-holder-406774_640.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 200px;
+  width: 700px;
+}
+.ui-widget-content {
+  float: left;
+  padding: 5px;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  top: 70px;
+}
+.ui-widget-header {
+  float: left;
+  padding: 5px;
+  width: 70px;
+  height: 70px;
+  position: relative;
+}
+#draggable1 {
+  padding-left: 50px;
+}

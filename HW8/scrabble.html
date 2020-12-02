@@ -1,0 +1,61 @@
+<!--
+  91.61 Assignment: Implementing a Bit of Scrabble with Drag-and-Drop (with Extra Credits)
+  Nicholas E. Avtges, Umass Lowell Computer Science, nicholas_avtges@student.uml.edu
+  Created 12/2/2020
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scrabble</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      $( function() {
+        $( "#draggable1" ).draggable();
+        $( "#draggable2" ).draggable();
+        $( "#draggable3" ).draggable();
+        $( "#draggable4" ).draggable();
+        $( "#draggable5" ).draggable();
+        $( "#draggable6" ).draggable();
+        $( "#draggable7" ).draggable();
+      } );
+    </script>
+  </head>
+  <body>
+    <div class="board">
+      <div id="space1" class="ui-widget-header">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
+      </div>
+    </div>
+
+    <div class="hand">
+      <div id="draggable1" class="ui-widget-content">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
+      </div>
+      <div id="draggable2" class="ui-widget-content">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_B.jpg" alt="B">
+      </div>
+      <div id="draggable3" class="ui-widget-content">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_C.jpg" alt="C">
+      </div>
+      <div id="draggable4" class="ui-widget-content">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_D.jpg" alt="D">
+      </div>
+      <div id="draggable5" class="ui-widget-content">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_E.jpg" alt="E">
+      </div>
+      <div id="draggable6" class="ui-widget-content">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_F.jpg" alt="F">
+      </div>
+      <div id="draggable7" class="ui-widget-content">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_G.jpg" alt="F">
+      </div>
+    </div>
+
+  </body>
+</html>
