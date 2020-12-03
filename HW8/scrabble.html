@@ -10,14 +10,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scrabble</title>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="myScript.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
-      var array = ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"];
-
       $( function() {
+        //Draggable Tiles
         $( "#draggable1" ).draggable();
         $( "#draggable2" ).draggable();
         $( "#draggable3" ).draggable();
@@ -25,92 +25,208 @@
         $( "#draggable5" ).draggable();
         $( "#draggable6" ).draggable();
         $( "#draggable7" ).draggable();
+        //droppable areas
         $( "#space1" ).droppable({
           over: function( event, ui ) {
-            $( this )
-            .find( "img" )
-            .attr( "src", "graphics_data/Scrabble_Tiles/Scrabble_Tile_B.jpg" );
+            var letter = getTileLetter(ui.draggable.find("img").attr("src"));
+            updateWord(letter, 1);
           },
           out: function( event, ui ) {
-            $( this )
-            .find( "img" )
-            .attr( "src", "graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" );
+            updateWord("_", 1);
           }
-
+        });
+        $( "#space2" ).droppable({
+          over: function( event, ui ) {
+            var letter = getTileLetter(ui.draggable.find("img").attr("src"));
+            updateWord(letter, 2);
+          },
+          out: function( event, ui ) {
+            updateWord("_", 2);
+          }
+        });
+        $( "#space3" ).droppable({
+          over: function( event, ui ) {
+            var letter = getTileLetter(ui.draggable.find("img").attr("src"));
+            updateWord(letter, 3);
+          },
+          out: function( event, ui ) {
+            updateWord("_", 3);
+          }
+        });
+        $( "#space4" ).droppable({
+          over: function( event, ui ) {
+            var letter = getTileLetter(ui.draggable.find("img").attr("src"));
+            updateWord(letter, 4);
+          },
+          out: function( event, ui ) {
+            updateWord("_", 4);
+          }
+        });
+        $( "#space5" ).droppable({
+          over: function( event, ui ) {
+            var letter = getTileLetter(ui.draggable.find("img").attr("src"));
+            updateWord(letter, 5);
+          },
+          out: function( event, ui ) {
+            updateWord("_", 5);
+          }
+        });
+        $( "#space6" ).droppable({
+          over: function( event, ui ) {
+            var letter = getTileLetter(ui.draggable.find("img").attr("src"));
+            updateWord(letter, 6);
+          },
+          out: function( event, ui ) {
+            updateWord("_", 6);
+          }
+        });
+        $( "#space7" ).droppable({
+          over: function( event, ui ) {
+            var letter = getTileLetter(ui.draggable.find("img").attr("src"));
+            updateWord(letter, 7);
+          },
+          out: function( event, ui ) {
+            updateWord("_", 7);
+          }
+        });
+        $( "#space8" ).droppable({
+          over: function( event, ui ) {
+            var letter = getTileLetter(ui.draggable.find("img").attr("src"));
+            updateWord(letter, 8);
+          },
+          out: function( event, ui ) {
+            updateWord("_", 8);
+          }
+        });
+        $( "#space9" ).droppable({
+          over: function( event, ui ) {
+            var letter = getTileLetter(ui.draggable.find("img").attr("src"));
+            updateWord(letter, 9);
+          },
+          out: function( event, ui ) {
+            updateWord("_", 9);
+          }
+        });
+        $( "#space10" ).droppable({
+          over: function( event, ui ) {
+            var letter = getTileLetter(ui.draggable.find("img").attr("src"));
+            updateWord(letter, 10);
+          },
+          out: function( event, ui ) {
+            updateWord("_", 10);
+          }
+        });
+        $( "#space11" ).droppable({
+          over: function( event, ui ) {
+            var letter = getTileLetter(ui.draggable.find("img").attr("src"));
+            updateWord(letter, 11);
+          },
+          out: function( event, ui ) {
+            updateWord("_", 11);
+          }
+        });
+        $( "#space12" ).droppable({
+          over: function( event, ui ) {
+            var letter = getTileLetter(ui.draggable.find("img").attr("src"));
+            updateWord(letter, 12);
+          },
+          out: function( event, ui ) {
+            updateWord("_", 12);
+          }
+        });
+        $( "#space13" ).droppable({
+          over: function( evnet, ui ){
+            var letter = getTileLetter(ui.draggable.find("img").attr("src"));
+            updateWord(letter, 13);
+          },
+          out: function( event, ui ) {
+            updateWord("_", 13);
+          }
+        });
+        $( "#space14" ).droppable({
+          over: function( event, ui ) {
+            var letter = getTileLetter(ui.draggable.find("img").attr("src"));
+            updateWord(letter, 14);
+          },
+          out: function( event, ui ) {
+            updateWord("_", 14);
+          }
+        });
+        $( "#space15" ).droppable({
+          over: function( event, ui ) {
+            var letter = getTileLetter(ui.draggable.find("img").attr("src"));
+            updateWord(letter, 15);
+          },
+          out: function( event, ui ) {
+            updateWord("_", 15);
+          }
         });
       } );
     </script>
   </head>
   <body>
+
+    <div id="textHeader">
+      <p>Word: </p>
+      <p id="word"></p>
+      <p>Score: </p>
+      <p id="score"></p>
+      <p>Remaining Tiles: </p>
+      <p id="remaining"></p>
+      <p>Highest Score: </p>
+      <p id="highScore"></p>
+    </div>
+
     <div class="board">
-      <div id="space1" class="ui-widget-header">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
-      </div>
-      <div id="space2" class="ui-widget-header">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
-      </div>
-      <div id="space3" class="ui-widget-header">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
-      </div>
-      <div id="space4" class="ui-widget-header">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
-      </div>
-      <div id="space5" class="ui-widget-header">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
-      </div>
-      <div id="space6" class="ui-widget-header">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
-      </div>
-      <div id="space7" class="ui-widget-header">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
-      </div>
-      <div id="space8" class="ui-widget-header">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
-      </div>
-      <div id="space9" class="ui-widget-header">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
-      </div>
-      <div id="space10" class="ui-widget-header">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
-      </div>
-      <div id="space11" class="ui-widget-header">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
-      </div>
-      <div id="space12" class="ui-widget-header">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
-      </div>
-      <div id="space13" class="ui-widget-header">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
-      </div>
-      <div id="space14" class="ui-widget-header">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
-      </div>
-      <div id="space15" class="ui-widget-header">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="A">
-      </div>
+      <div id="space1" class="ui-widget-header"></div>
+      <div id="space2" class="ui-widget-header"></div>
+      <div id="space3" class="ui-widget-header"></div>
+      <div id="space4" class="ui-widget-header"></div>
+      <div id="space5" class="ui-widget-header"></div>
+      <div id="space6" class="ui-widget-header"></div>
+      <div id="space7" class="ui-widget-header"></div>
+      <div id="space8" class="ui-widget-header"></div>
+      <div id="space9" class="ui-widget-header"></div>
+      <div id="space10" class="ui-widget-header"></div>
+      <div id="space11" class="ui-widget-header"></div>
+      <div id="space12" class="ui-widget-header"></div>
+      <div id="space13" class="ui-widget-header"></div>
+      <div id="space14" class="ui-widget-header"></div>
+      <div id="space15" class="ui-widget-header"></div>
+    </div>
+
+    <div id="rules">
+      <p>Create one workd with no gap between the letters.</p>
+      <p>The word must contain at least 2 letters.</p>
+      <p>The word must be found in the disctionary.</p>
+    </div>
+
+    <div id="buttons">
+      <button type="button" name="submit">Submit Word</button>
+      <button type="button" name="startOver">Start Over</button>
     </div>
 
     <div class="hand">
       <div id="draggable1" class="ui-widget-content">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_D.jpg" alt="A">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_D.jpg" alt="">
       </div>
       <div id="draggable2" class="ui-widget-content">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_O.jpg" alt="B">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_O.jpg" alt="">
       </div>
       <div id="draggable3" class="ui-widget-content">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_O.jpg" alt="C">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_O.jpg" alt="">
       </div>
       <div id="draggable4" class="ui-widget-content">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_D.jpg" alt="D">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_D.jpg" alt="">
       </div>
       <div id="draggable5" class="ui-widget-content">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_I.jpg" alt="E">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_I.jpg" alt="">
       </div>
       <div id="draggable6" class="ui-widget-content">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_E.jpg" alt="F">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_E.jpg" alt="">
       </div>
       <div id="draggable7" class="ui-widget-content">
-        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_Blank.jpg" alt="F">
+        <img src="graphics_data/Scrabble_Tiles/Scrabble_Tile_Blank.jpg" alt="">
       </div>
     </div>
 
