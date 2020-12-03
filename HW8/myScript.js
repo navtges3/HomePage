@@ -1,5 +1,7 @@
 var array = ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"];
 
+var images = ["image1", "image2", "image3", "image4", "image5", "image6", "image7"];
+
 var alphabet = [
   {"letter":"A", "value":1, "amount":9},
 	{"letter":"B", "value":3, "amount":2},
@@ -46,9 +48,8 @@ function randomLetter(){
 }
 
 function fillHand(){
-
-  for (var i = 1; i <= 7; i++) {
-    var draggable = document.getElementById("draggable" + i);
+  for (var i = 0; i < 7; i++) {
+    var image = document.getElementById(images[i]);
     var tile = "";
     var letter = randomLetter();
     console.log("randomLetter = " + letter);
@@ -56,7 +57,7 @@ function fillHand(){
       tile = "graphics_data/Scrabble_Tiles/Scrabble_Tile_Blank.jpg";
     }
     tile = "graphics_data/Scrabble_Tiles/Scrabble_Tile_"+letter+".jpg";
-    draggable.find("img").attr("src", tile);
+    image.src = tile;
   }
 }
 
