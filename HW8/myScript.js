@@ -39,6 +39,7 @@ function randomLetter(){
   var number = Math.floor(Math.random() * 27);
   while(1){
     if(used[number] < alphabet[number]["amount"]){
+      used[number] += 1;
       return alphabet[number]["letter"];
     }
   }
