@@ -55,10 +55,12 @@ function fillHand(){
     var tile = "";
     var letter = randomLetter();
     console.log("randomLetter = " + letter);
-    if(letter == "_"){
+    if(letter[0] == "_"){
       tile = "graphics_data/Scrabble_Tiles/Scrabble_Tile_Blank.jpg";
     }
-    tile = "graphics_data/Scrabble_Tiles/Scrabble_Tile_"+letter+".jpg";
+    else{
+      tile = "graphics_data/Scrabble_Tiles/Scrabble_Tile_"+letter+".jpg";
+    }
     image.src = tile;
   }
 }
