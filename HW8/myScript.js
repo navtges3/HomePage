@@ -37,9 +37,11 @@ var used = new Array(27).fill(0);
 var doubleWord = [3, 13];
 var doubleLetter = [7, 9];
 
+var score = 0;
+
 function randomLetter(){
-  var number = Math.floor(Math.random() * 27);
   while(1){
+    var number = Math.floor(Math.random() * 27);
     if(used[number] < alphabet[number]["amount"]){
       used[number] += 1;
       return alphabet[number]["letter"];
@@ -61,10 +63,38 @@ function fillHand(){
   }
 }
 
+function updateScore(number){
+  score = score + number;
+  document.getElementById("score").innerHTML = score;
+}
+
 function updateWord(letter, position){
+
+  if(array[position - 1]  == letter[0]){
+    return;
+  }
+  var prev = array[position - 1];
+  var index = 0;
   array[position - 1] = letter;
   var word = "";
   var htmlText = document.getElementById("word");
+
+  if(letter == "_"){
+    for(var i = 0; i < 27; i++){
+      if(alphabet[i]["letter"] == prev){
+        index = i;
+      }
+    }
+    updateScore(0 - alphabet[index]["value"]);
+  }
+  else{
+    for(var i = 0; i < 27; i++){
+      if(alphabet[i]["letter"] == letter){
+        index = i;
+      }
+    }
+    updateScore(alphabet[index]["value"]);
+  }
 
   for(var i = 0; i < 15; i++){
     if(array[i] != "_"){
@@ -76,7 +106,6 @@ function updateWord(letter, position){
 }
 
 function getTileLetter(src){
-  console.log("getTileLetter Called");
   var letter = "";
   switch (src) {
     case "graphics_data/Scrabble_Tiles/Scrabble_Tile_A.jpg":
