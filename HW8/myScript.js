@@ -1,7 +1,7 @@
 var array = ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"];
 
 var images = ["image1", "image2", "image3", "image4", "image5", "image6", "image7"];
-
+var draggables = ["draggable1", "draggable2", "draggable3", "draggable4", "draggable5", "draggable6", "draggable7"]
 var alphabet = [
   {"letter":"A", "value":1, "amount":9},
 	{"letter":"B", "value":3, "amount":2},
@@ -38,7 +38,9 @@ var doubleWord = [3, 13];
 var doubleLetter = [7, 9];
 
 var score = 0;
+var highScore = 0;
 
+//get a random letter
 function randomLetter(){
   while(1){
     var number = Math.floor(Math.random() * 27);
@@ -49,6 +51,7 @@ function randomLetter(){
   }
 }
 
+//fills the hand with random tiles
 function fillHand(){
   for (var i = 0; i < 7; i++) {
     var image = document.getElementById(images[i]);
@@ -63,13 +66,22 @@ function fillHand(){
     }
     image.src = tile;
   }
+  for(var i = 0; i < 15; i++){
+    array[i] = "_";
+  }
+  document.getElementById("word").innerHTML = "";
+  score = 0;
+  document.getElementById("score").innerHTML = 0;
+  moveHome();
 }
 
+//updates the score
 function updateScore(number){
   score = score + number;
   document.getElementById("score").innerHTML = score;
 }
 
+//updates the word value for displaying to the user
 function updateWord(letter, position){
 
   if(array[position - 1]  == letter[0]){
@@ -81,13 +93,19 @@ function updateWord(letter, position){
   var word = "";
   var htmlText = document.getElementById("word");
 
+  var bonus = 1;
+
+  if(position == doubleLetter[0] || position == doubleLetter[1]){
+    bonus = 2;
+  }
+
   if(letter == "_"){
     for(var i = 0; i < 27; i++){
       if(alphabet[i]["letter"] == prev){
         index = i;
       }
     }
-    updateScore(0 - alphabet[index]["value"]);
+    updateScore(bonus * (0 - alphabet[index]["value"]));
   }
   else{
     for(var i = 0; i < 27; i++){
@@ -95,7 +113,7 @@ function updateWord(letter, position){
         index = i;
       }
     }
-    updateScore(alphabet[index]["value"]);
+    updateScore(bonus * alphabet[index]["value"]);
   }
 
   for(var i = 0; i < 15; i++){
@@ -107,6 +125,46 @@ function updateWord(letter, position){
   htmlText.innerHTML = word;
 }
 
+//resets after submition
+function clearBoard(){
+  for(var i = 0; i < 7; i++){
+    var image = document.getElementById(images[i]);
+    var letter = getTileLetter(image);
+    if(word.includes(letter)){
+      var tile = "";
+      var letter = randomLetter();
+      console.log("randomLetter = " + letter);
+      if(letter[0] == "_"){
+        tile = "graphics_data/Scrabble_Tiles/Scrabble_Tile_Blank.jpg";
+      }
+      else{
+        tile = "graphics_data/Scrabble_Tiles/Scrabble_Tile_"+letter+".jpg";
+      }
+      image.src = tile;
+    }
+  }
+  for(var i = 0; i < 15; i++){
+    array[i] = "_";
+  }
+  document.getElementById("word").innerHTML = "";
+  score = 0;
+  document.getElementById("score").innerHTML = 0;
+  moveHome();
+}
+
+//move all tiles back to the hand
+function moveHome(){
+  var top = "70px";
+  var left = "0px";
+  for(var i = 0; i < 7; i++){
+    var div = document.getElementById(draggables[i]);
+    div.style.postion = "absolute";
+    div.style.left = left;
+    div.style.top = top;
+  }
+}
+
+//get the letter of a given tile
 function getTileLetter(src){
   var letter = "";
   switch (src) {

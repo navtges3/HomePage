@@ -16,15 +16,16 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
+      var dict = [];
       $( function() {
         //Draggable Tiles
-        $( "#draggable1" ).draggable();
-        $( "#draggable2" ).draggable();
-        $( "#draggable3" ).draggable();
-        $( "#draggable4" ).draggable();
-        $( "#draggable5" ).draggable();
-        $( "#draggable6" ).draggable();
-        $( "#draggable7" ).draggable();
+        $( "#draggable1" ).draggable({ revert: 'invalid' });
+        $( "#draggable2" ).draggable({ revert: 'invalid' });
+        $( "#draggable3" ).draggable({ revert: 'invalid' });
+        $( "#draggable4" ).draggable({ revert: 'invalid' });
+        $( "#draggable5" ).draggable({ revert: 'invalid' });
+        $( "#draggable6" ).draggable({ revert: 'invalid' });
+        $( "#draggable7" ).draggable({ revert: 'invalid' });
         //droppable areas
         $( "#space1" ).droppable({
           over: function( event, ui ) {
@@ -161,7 +162,42 @@
             updateWord("_", 15);
           }
         });
+        $("#hand").droppable();
       } );
+
+      function submitWord(){
+        console.log("Submit has been pressed");
+        var doubleScore = 1;
+        var finalScore;
+        if(array[doubleWord[0]-1] != "_" || array[doubleWord[1]-1] != "_"){
+          doubleScore = 2;
+        }
+        //get word out of the board
+        for(var i = 0; i < 15; i++){
+          if(array[i] != "_"){
+            word != array[i];
+          }
+        }
+        var wordFound = false;
+        for(var i = 0; i < dict.length; i++){
+          console.log(dict[i]);
+          if(dict[i] == word){
+            wordFound = true;
+            break;
+          }
+        }
+        if(word.length > 2 && wordFound){
+          console.log("Word is valid");
+          //the word is real
+          finalScore = score * doubleScore;
+
+          if(finalScore > highScore){
+            highScore = finalScore;
+            document.getElementById("highScore").innerHTML = finalScore;
+          }
+          clearBoard();
+        }
+      }
     </script>
   </head>
   <body>
@@ -200,11 +236,11 @@
     </div>
 
     <div id="buttons">
-      <button type="button" name="submit">Submit Word</button>
-      <button type="button" name="startOver">Start Over</button>
+      <button type="button" onclick="submitWord()" name="submit">Submit Word</button>
+      <button type="button" onclick="fillHand()" name="startOver">Start Over</button>
     </div>
 
-    <div class="hand">
+    <div id="hand" class="ui-widget-header">
       <div id="draggable1" class="ui-widget-content">
         <img id="image1" src="graphics_data/Scrabble_Tiles/Scrabble_Tile_D.jpg" alt="">
       </div>
