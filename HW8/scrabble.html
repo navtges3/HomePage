@@ -172,10 +172,18 @@
         if(array[doubleWord[0]-1] != "_" || array[doubleWord[1]-1] != "_"){
           doubleScore = 2;
         }
+        var firstLetter = false;
         //get word out of the board
         for(var i = 0; i < 15; i++){
           if(array[i] != "_"){
+            if(firstLetter == false){
+              firstLetter = true;
+            }
             word != array[i];
+          }
+          else if (firstLetter) {
+            //bad word
+            return;
           }
         }
         var wordFound = false;
