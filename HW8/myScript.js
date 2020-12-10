@@ -1,3 +1,6 @@
+//91.61 Assignment: Implementing a Bit of Scrabble with Drag-and-Drop (with Extra Credits)
+//Nicholas E. Avtges, Umass Lowell Computer Science, nicholas_avtges@student.uml.edu
+//Created 12/2/2020
 var array = ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"];
 
 var images = ["image1", "image2", "image3", "image4", "image5", "image6", "image7"];
