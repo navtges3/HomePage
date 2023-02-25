@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>My Web Page</title>
+        <title>Nick Avtges</title>
         <meta charset="utf-8">
         <meta name="viewpoint" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -13,7 +13,7 @@
 
         <!-- Page Content -->
         <div class="jumbotron">
-          <h1>&#127866;Nick Avtges&#128009;</h1>
+          <h1>&#127866;Nick Avtges III&#128009;</h1>
           <h3 class = email>Email: navtges3@gmail.com</h3>
         </div>
 
@@ -37,11 +37,25 @@
             <div class="col-sm-3">
                 <h2><ins>Google Search</ins></h2>
                 <form id="form">
-                    <input type="search" id="query" name="q" 
+                    <input type="search" id="query" name="q"
                            placeholder="Search..."
                            aria-label="Google Search">
                     <button>Search</button>
                 </form>
+                <script>
+                    const f = document.getElementById('form');
+                    const q = document.getElementById('query');
+                    const google = 'https://www.google.com/search?q=';
+
+                    function submitted(event) {
+                        event.preventDefault();
+                        const url = google + q.value;
+                        const win = window.open(url, '_blank');
+                        win.focus();
+                    }
+
+                    f.addEventListener('submit', submitted);
+                </script>
             </div>
           </div>
         </div>
