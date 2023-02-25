@@ -18,46 +18,50 @@
         </div>
 
         <div class="container">
-          <div class="row">
-            <div class="col-sm-3">
-              <h2><ins>Usefull Links</ins></h2>
-              <div class="list-group">
-                <a class="list-group-item" href="https://github.com/navtges3?tab=repositories">GitHub</a>
-                <a class="list-group-item" href="https://www.youtube.com/channel/UC1uAz-LNpjReE4dFrV6d85g?view_as=subscriber">YouTube</a>
-                <a class="list-group-item" href="https://www.linkedin.com/in/nick-avtges-296a0b178/">LinkedIn</a>
-                <a class="list-group-item" href="pdf.html">Resume</a>
-                <a class="list-group-item" href="https://app.clickup.com/9006035595/v/l/t/9006035595">ClickUp</a>
-                <a class="list-group-item" href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">GMail</a>
-                <a class="list-group-item" href="https://drive.google.com/drive/my-drive">Google Drive</a>
-                <a class="list-group-item" href="https://www.netflix.com/browse">Netflix</a>
-                <a class="list-group-item" href="https://www.amazon.com/gp/video/storefront/ref=atv_pr_sw_sc?node=2858778011">Prive Video</a>
-                <a class="list-group-item" href="legacyCode/Old_index.html">Old Home Page</a>
-              </div>
-            </div>
-            <div class="col-sm-3">
-                <h2><ins>Google Search</ins></h2>
-                <form id="form">
-                    <input type="search" id="query" name="q"
-                           placeholder="Search..."
-                           aria-label="Google Search">
-                    <button>Search</button>
-                </form>
-                <script>
-                    const f = document.getElementById('form');
-                    const q = document.getElementById('query');
-                    const google = 'https://www.google.com/search?q=';
+            <div class="row">
+                <div class="col-sm-3">
+                    <h2><ins>Quick Links</ins></h2>
+                    <div class="list-group">
+                        <a class="list-group-item" href="https://github.com/navtges3?tab=repositories">GitHub</a>
+                        <a class="list-group-item" href="https://www.youtube.com/channel/UC1uAz-LNpjReE4dFrV6d85g?view_as=subscriber">YouTube</a>
+                        <a class="list-group-item" href="https://app.clickup.com/9006035595/v/l/t/9006035595">ClickUp</a>
+                        <a class="list-group-item" href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">GMail</a>
+                        <a class="list-group-item" href="https://www.netflix.com/browse">Netflix</a>
+                        <a class="list-group-item" href="https://www.amazon.com/gp/video/storefront/ref=atv_pr_sw_sc?node=2858778011">Prive Video</a>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <h2><ins>Important Info</ins></h2>
+                    <div class="list-group">
+                        <a class="list-group-item" href="https://www.linkedin.com/in/nick-avtges-296a0b178/">LinkedIn</a>
+                        <a class="list-group-item" href="pdf.html">Resume</a>
+                        <a class="list-group-item" href="legacyCode/Old_index.html">Old Home Page</a>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <h2><ins>Google Search</ins></h2>
+                    <form id="form">
+                        <input type="search" id="query" name="q"
+                               placeholder="Search..."
+                               aria-label="Google Search">
+                        <button>Search</button>
+                    </form>
+                    <script>
+                        const f = document.getElementById('form');
+                        const q = document.getElementById('query');
+                        const google = 'https://www.google.com/search?q=';
 
-                    function submitted(event) {
-                        event.preventDefault();
-                        const url = google + q.value;
-                        const win = window.open(url, '_blank');
-                        win.focus();
-                    }
+                        function submitted(event) {
+                            event.preventDefault();
+                            const url = google + q.value;
+                            const win = window.open(url, '_blank');
+                            win.focus();
+                        }
 
-                    f.addEventListener('submit', submitted);
-                </script>
+                        f.addEventListener('submit', submitted);
+                    </script>
+                </div>
             </div>
-          </div>
         </div>
     </body>
 </html>
