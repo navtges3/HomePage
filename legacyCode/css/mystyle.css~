@@ -1,10 +1,9 @@
 /*
-91.61 Assignment Bootstrap and GitHub
+91.61 Assignment Styling Your First Web Page With CSS
 Nicholas E. Avtges Umass Lowell Computer Science, nicholas_avtges@student.uml.edu
-Created 9/28/2020
+Created 9/8/2020
 
-This file will be used to format the main html file for HW4. The customization here
-will be used to pollish the improvements made using bootstrap.
+This file will be used to format the index page created in part one of homework two.
 */
 
 * {
@@ -42,28 +41,4 @@ a {
 
 .list-group-item:hover {
   background-color: #f5b662;
-}
-
-form {
-    background-color: #4654e1;
-    width: 300px;
-    height: 44px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-input {
-    all: unset;
-    font: 16px system-ui;
-    color: #fff;
-    height: 100%;
-    width: 100%;
-    padding: 6px 10px;
-}
-
-::placeholder {
-    color: #fff;
-    opacity: 0.7;
 }
