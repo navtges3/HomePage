@@ -7,8 +7,19 @@ This file will be used to format the main html file for HW4. The customization h
 will be used to pollish the improvements made using bootstrap.
 */
 
+html{
+    background-image: url("angryimg.png");
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+
 * {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.jumbotron {
+    color: navy;
+    text-align: center;
 }
 
 body {
@@ -17,22 +28,14 @@ body {
     background-size: cover;
 }
 
-.jumbotron {
-    color: navy;
-    text-align: center;
-    background: transparent;
-}
-
 h2 {
     color: navy;
     text-align: center;
 }
 
 a {
-  text-decoration: none;
-  color: black;
-  font-size: large;
-  font-weight: bold;
+    font-size: large;
+    font-weight: bold;
 }
 
 .list-group .list-group-item {
@@ -52,6 +55,7 @@ form {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-bottom: 15px;
 }
 
 input {
