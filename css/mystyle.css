@@ -28,23 +28,24 @@ body {
     background-size: cover;
 }
 
-h2 {
+ins {
     color: navy;
     text-align: center;
+    font-weight: bold;
 }
 
 a {
     font-size: large;
-    font-weight: bold;
+   font-weight: bold;
 }
 
 .list-group .list-group-item {
-    background-color: #3399ff;
+    background-color: #069bbd;
     border: black;
 }
 
 .list-group-item:hover {
-    background-color: #cce6ff;
+    background-color: #3399ff;
 }
 
 form {
