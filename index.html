@@ -23,33 +23,6 @@
         <h1>Nick Avtges III</h1>
         <h3 class=email>Email: navtges3@gmail.com</h3>
     </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-6 offset-3">
-                <h2><ins>Google Search</ins></h2>
-                <form id="form">
-                    <label for="query" class="sr-only">Search Google</label>
-                    <input type="search" id="query" name="q" placeholder="Search..." aria-label="Google Search">
-                    <button class="btn"><i class="fa fa-search"></i></button>
-                </form>
-                <script>
-                    const f = document.getElementById('form');
-                    const q = document.getElementById('query');
-                    const google = 'https://www.google.com/search?q=';
-
-                    function submitted(event) {
-                        event.preventDefault();
-                        const url = google + q.value;
-                        const win = window.open(url, '_blank');
-                        win.focus();
-                    }
-
-                    f.addEventListener('submit', submitted);
-                </script>
-            </div>
-        </div>
-
         <div class="row">
             <div class="col-4 offset-2">
                 <h2><ins>Entertainment</ins></h2>
@@ -71,16 +44,6 @@
                 <a href="https://drive.google.com/drive/my-drive"><img src="logos/google-drive.png" class="logo" alt="Google Drive Logo"/></a>
                 <a href="https://www.linkedin.com/in/nick-avtges-375a56255/"><img src="logos/linkedin.png" class="logo" alt="Linkedin Logo"/></a>
                 <a href="legacyCode/Old_index.html"><img src="logos/home.png" class="logo" alt="Archive"/></a>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-6 offset-3">
-                <h2><ins>Workouts</ins></h2>
-                <div class="list-group">
-                    <a class="list-group-item text-dark" href="https://docs.google.com/spreadsheets/d/1Il4lMdcTS3qJ3duqHAKkTJ_2IvSstLavJLaIUEZ5c7k/edit?usp=sharing">Current Split</a>
-                    <a class="list-group-item text-dark" href="https://drive.google.com/drive/folders/1-Lij4it1NOM3ZZTpVqJfcstrR-gXB780?usp=share_link">Workout Archive</a>
-                </div>
             </div>
         </div>
     </div>
